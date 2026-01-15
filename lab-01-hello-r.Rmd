@@ -67,15 +67,24 @@ I noticed that the correlation is very similar to the dino correlation, this tim
 
 ### Exercise 4
 
-Add your code and narrative to complete this exercise. Use the conventions from the previous exercises to name your chunks and organize your work.
 
-```{r}
+Plotting circle dataset on a graph
+```{r plot-circle}
+
+circle_data <- datasaurus_dozen %>%
+  filter(dataset== "circle")
+
+ggplot(data = circle_data, mapping = aes(x=x, y=y)) + geom_point()
+```
+
+Calculating correlation for circle dataset
+```{r cor-circle}
+circle_data %>%
+  summarize(r = cor(x,y))
 
 ```
 
-```{r}
-
-```
+The correlation is -.0683. This is a slightly stronger correlation than the dinosaur correlation, but still is a overall weak correlation. 
 
 ### Exercise 5
 
